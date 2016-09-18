@@ -1,0 +1,17 @@
+body{
+  display: flex;
+  flex-direction: column;
+  margin: 0
+}
+
+.navbar{
+  display: flex;
+  background: yellow;
+  justify-content: space-around;
+}
+
+.qa{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
