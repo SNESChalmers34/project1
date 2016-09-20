@@ -1,17 +1,47 @@
-body{
-  display: flex;
-  flex-direction: column;
-  margin: 0
-}
+* {
+  margin: 0; }
 
-.navbar{
+a {
+  text-decoration: none;
+  color: inherit; }
+
+body {
+  background: url("chalkboard.png");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.content {
   display: flex;
-  background: yellow;
+  margin: 3rem 5% 1rem;
+  font-size: 2.5rem;
+  color: white; }
+  .content .question {
+    color: white;
+    width: 60%; }
+  .content .qtext {
+    font-size: 2.5rem; }
+
+.answers {
+  width: 60%;
+  margin-left: 5%; }
+  .answers .answer {
+    color: white;
+    font-size: 2rem;
+    cursor: pointer; }
+  .answers .answer:hover {
+    color: yellow; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
   justify-content: space-around;
-}
+  background: black;
+  height: 5.5rem;
+  color: yellow; }
+  footer div {
+    margin-top: 1rem;
+    font-size: 2rem; }
 
-.qa{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
+/*# sourceMappingURL=main.css.map */
