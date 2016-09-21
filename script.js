@@ -143,12 +143,6 @@ function start(){
        $('.content').children().hide()
        var finalscore = $('.content').append('<p class="fs">' + 'Your final score is: ' + score + '</p>')
         $('.leaderboard').append('<input type="text" placeholder="name"> <button>Submit</button>')
-        $('button').on('click', function(){
-          $('.leaderboard').show()
-          var name = $('input').val()
-          var nameScore = name + " " + score
-          localStorage.setItem('nameScore', nameScore)
-          $('.leaderboard').append('<div>' + localStorage.getItem('nameScore') + '</div>')
 
         })
        return
