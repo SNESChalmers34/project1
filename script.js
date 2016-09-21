@@ -144,7 +144,6 @@ function start(){
        var finalscore = $('.content').append('<p class="fs">' + 'Your final score is: ' + score + '</p>')
         $('.leaderboard').append('<input type="text" placeholder="name"> <button>Submit</button>')
 
-        })
        return
      }
 
