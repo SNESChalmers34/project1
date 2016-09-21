@@ -110,6 +110,7 @@ var questions = [
 ]
 
 
+function start(){
 var index = 0
 var score = 0
 var woohoo = new Audio('woohoo.mp3')
@@ -123,7 +124,7 @@ $('#c').html(questions[0].choices[2])
 $('#d').html(questions[0].choices[3])
 $('#score').html('Score: ' + 0)
 
-
+$('.answer').off('click')
 $('.answer').on('click', function(){
    var choice = $(this).html()
    var i = questions[index].choices.indexOf(choice)
@@ -159,3 +160,10 @@ $('.answer').on('click', function(){
    $('#d').html(questions[index].choices[3])
 
 })
+}
+
+$('#trivia').on('click', function(){
+  start()
+})
+
+start()
