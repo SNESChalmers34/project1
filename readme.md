@@ -7,8 +7,6 @@ Then I started on the logic and after a little while came to the conclusion that
 Unsolved problems:
 I am trying to get my leaderboard working but I cannot find my way through localStorage and I cannot figure out how to restart the game without refreshing the entire page.
 
-(must git add .)
-
 User Stories:
 As a user, I should be able to differentiate between questions and answers
 As a user, I should be able to choose my answer just by clicking it
