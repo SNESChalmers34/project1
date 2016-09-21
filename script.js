@@ -55,12 +55,57 @@ var questions = [
  },
  {text: 'What instrument does Lisa play?',
    choices:[
-     'Clarinet ',
-     'James',
-     'John',
-     'Jacob',
+     'Clarinet',
+     'Flute',
+     'Violin',
+     'Saxophone',
+   ],
+   answer:3
+ },
+ {text: 'What is the name of Bart\'s favorite superhero?',
+   choices:[
+     'Fallout Boy',
+     'Radioactive Man',
+     'Radiation Dude',
+     'Atomic Man',
+   ],
+   answer:1
+ },
+ {text: 'What dessert did Bart eat while playing hookey?',
+   choices:[
+     'Rice Crispy Treats',
+     'Chocolate Cake',
+     'Apple Pie',
+     'Ice Cream',
    ],
    answer:0
+ },
+ {text: 'What did Lyle Lanley convince Springfield to build?',
+   choices:[
+     'Itchy and Scratchy Land',
+     'A Subway System',
+     'A Monorail',
+     'A Casino',
+   ],
+   answer:2
+ },
+ {text: 'What animal is painted to look like a cow on camera?',
+   choices:[
+     'Cow',
+     'Horse',
+     'Bull',
+     'Tape a bunch of Cats together',
+   ],
+   answer:2
+ },
+ {text: 'What does Radioactive Man put on to protect himself from acid?',
+   choices:[
+     'A Hazmat suit',
+     'Gloves',
+     'Nothing',
+     'Goggles',
+   ],
+   answer:3
  },
 ]
 
