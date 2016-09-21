@@ -1,3 +1,4 @@
+// questions
 var questions = [
  {text: 'What is Homer J Simpson\'s middle name?',
    choices:[
@@ -109,61 +110,63 @@ var questions = [
  },
 ]
 
-
+// start of the game logic
 function start(){
-var index = 0
-var score = 0
-var woohoo = new Audio('woohoo.mp3')
-var doh = new Audio('doh.mp3')
-var leaders = []
+  var index = 0
+  var score = 0
+  var woohoo = new Audio('woohoo.mp3')
+  var doh = new Audio('doh.mp3')
 
-$('.qtext').html(questions[index].text)
-$('#a').html(questions[0].choices[0])
-$('#b').html(questions[0].choices[1])
-$('#c').html(questions[0].choices[2])
-$('#d').html(questions[0].choices[3])
-$('#score').html('Score: ' + 0)
+// start of question cycle
+  $('.qtext').html(questions[index].text)
+  $('#a').html(questions[0].choices[0])
+  $('#b').html(questions[0].choices[1])
+  $('#c').html(questions[0].choices[2])
+  $('#d').html(questions[0].choices[3])
+  $('#score').html('Score: ' + 0)
 
-$('.answer').off('click')
-$('.answer').on('click', function(){
-   var choice = $(this).html()
-   var i = questions[index].choices.indexOf(choice)
-   if(questions[index].answer === i ){
-     woohoo.play()
-     score++
-     $('#score').html('Score: ' + score )
-   }
-   else{
-     doh.play()
-   }
-   index++
-   if (index === questions.length){
-     $('.content').siblings().fadeOut('slow')
-     $('.content').children().fadeOut('slow')
-     var finalscore = $('.content').append('<p></p>').html('Your final score is: ' + score)
-     $('.leaderboard').append('<input type="text" placeholder="name"> <button>Submit</button>')
-     $('button').on('click', function(){
-       $('.leaderboard').show()
-       var name = $('input').val()
-       var nameScore = name + " " + score
-       localStorage.setItem('nameScore', nameScore)
+  $('.answer').off('click')
+  $('.answer').on('click', function(){
+     var choice = $(this).html() //getting html from answer div
+     var i = questions[index].choices.indexOf(choice) //indexOfChoice turns html of choice into index from array
+     if(questions[index].answer === i ){
+       woohoo.play()
+       score++
+       $('#score').html('Score: ' + score )
+     }
+     else{
+       doh.play()
+     }
+     index++
+     if (index === questions.length){
+       $('.content').siblings().hide()
+       $('.content').children().hide()
+       var finalscore = $('.content').append('<p class="fs">' + 'Your final score is: ' + score + '</p>')
+        $('.leaderboard').append('<input type="text" placeholder="name"> <button>Submit</button>')
+        $('button').on('click', function(){
+          $('.leaderboard').show()
+          var name = $('input').val()
+          var nameScore = name + " " + score
+          localStorage.setItem('nameScore', nameScore)
+          $('.leaderboard').append('<div>' + localStorage.getItem('nameScore') + '</div>')
 
-       // $('.leaderboard').append('<div>' + localStorage.getItem('nameScore') + '</div>')
-     })
-     return
-   }
+        })
+       return
+     }
 
-   $('.qtext').html(questions[index].text)
-   $('#a').html(questions[index].choices[0])
-   $('#b').html(questions[index].choices[1])
-   $('#c').html(questions[index].choices[2])
-   $('#d').html(questions[index].choices[3])
-
-})
+     $('.qtext').html(questions[index].text)
+     $('#a').html(questions[index].choices[0])
+     $('#b').html(questions[index].choices[1])
+     $('#c').html(questions[index].choices[2])
+     $('#d').html(questions[index].choices[3])
+  })
 }
 
+start() //starting game
 $('#trivia').on('click', function(){
+  $('.content').children().show()
+  $('.answers').show()
+  $('.fs').hide()
+  $('.leaderboard').hide()
   start()
 })
-
-start()
